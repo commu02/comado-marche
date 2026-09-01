@@ -27,6 +27,26 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', closeDrawer);
     });
 
+    // 1.8 Mobile Plan Details Toggle
+    const planToggles = document.querySelectorAll('.plan-details-toggle');
+    planToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.pricing-card');
+            if (!card) return;
+            const features = card.querySelector('.plan-features');
+            if (features) {
+                const isOpen = window.getComputedStyle(features).display !== 'none';
+                if (isOpen) {
+                    features.style.display = 'none';
+                    btn.textContent = '詳細を見る ▼';
+                } else {
+                    features.style.display = 'block';
+                    btn.textContent = '詳細を閉じる ▲';
+                }
+            }
+        });
+    });
+
     // 2. Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     if (revealElements.length > 0) {

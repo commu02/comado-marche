@@ -1866,10 +1866,21 @@ textarea.input-field {
     stroke-width: 2.2px;
 }
 
+.mobile-only {
+    display: none;
+}
+
+.plan-details-toggle {
+    display: none;
+}
+
 /* ==========================================================================
    Mobile Optimization Enhancements (max-width: 600px)
    ========================================================================== */
 @media (max-width: 600px) {
+    .mobile-only {
+        display: inline;
+    }
     .header-wrap {
         padding: 0.75rem 1rem;
     }
@@ -1880,8 +1891,13 @@ textarea.input-field {
         display: none;
     }
     .header-entry-btn {
-        padding: 0.4rem 0.85rem;
-        font-size: 0.8rem;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.75rem;
+        text-align: center;
+        line-height: 1.25;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
     }
     .hero {
         padding: 6rem 0 3rem 0;
@@ -1921,7 +1937,8 @@ textarea.input-field {
         margin-bottom: 2rem;
     }
     .section-jp-title {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
+        line-height: 1.4;
     }
     .sched-header-row {
         flex-direction: column;
@@ -1973,6 +1990,48 @@ textarea.input-field {
     .fixtures-grid {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+    }
+    /* Hide fixtures after 4th item on mobile when "all" is active */
+    .fixtures-grid .fixture-item:nth-child(n+5) {
+        display: none !important;
+    }
+    .pricing-card {
+        padding: 1.75rem 1.25rem;
+    }
+    .plan-price {
+        margin-bottom: 0.75rem;
+    }
+    /* Collapsible Plan Details on Mobile */
+    .plan-details-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgba(91, 112, 83, 0.08);
+        border: 1px solid var(--border-color);
+        color: var(--accent-sage);
+        font-size: 0.825rem;
+        font-weight: 600;
+        padding: 0.45rem 0;
+        border-radius: var(--radius-sm);
+        margin: 0.75rem 0 1rem;
+        cursor: pointer;
+        transition: var(--transition-fast);
+    }
+    .plan-details-toggle:hover {
+        background-color: var(--accent-sage-light);
+    }
+    .plan-features {
+        display: none; /* hidden until user clicks toggle on mobile */
+        margin-bottom: 1.25rem;
+        transition: all 0.3s ease;
+    }
+    .btn-plan {
+        text-align: center;
+        line-height: 1.35;
+        justify-content: center;
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
     }
     .form-box {
         padding: 2rem 1.25rem;
