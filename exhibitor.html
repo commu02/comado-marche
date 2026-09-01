@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMADO marché OZASA | 荷物は商品だけでOK。手ぶらで出店できる屋内マルシェ</title>
+    <meta name="description" content="福岡市中央区小笹の「PAL不動産」で開催される、出店什器がすべて無料でレンタルできる共同型レジ採用の屋内デイリーマルシェ。焼き菓子、パン、ハンドメイド作家様募集中。">
+    
+    <!-- CSS stylesheet link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i data-lucide="leaf" class="logo-leaf"></i>
+                COMADO marché
+            </a>
+            <div class="header-right-actions">
+                <a href="index.html" class="nav-link nav-customer-link">お客様向けサイト</a>
+                <a href="#contact" class="btn btn-primary btn-sm header-entry-btn">
+                    <i data-lucide="send"></i> 出店にエントリー
+                </a>
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="メニューを開く">
+                    <i data-lucide="menu" style="width: 22px; height: 22px;"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Drawer Menu -->
+    <div id="nav-drawer" class="nav-drawer">
+        <div class="nav-drawer-backdrop" id="nav-drawer-backdrop"></div>
+        <div class="nav-drawer-content">
+            <div class="nav-drawer-header">
+                <span class="drawer-title"><i data-lucide="leaf" style="width: 20px; height: 20px;"></i> メニュー</span>
+                <button id="nav-drawer-close" class="drawer-close-btn">&times;</button>
+            </div>
+            <ul class="nav-drawer-menu">
+                <li><a href="#about" class="drawer-link"><i data-lucide="heart" style="width: 18px; height: 18px;"></i> コンセプト</a></li>
+                <li><a href="#features" class="drawer-link"><i data-lucide="star" style="width: 18px; height: 18px;"></i> 3つの安心特徴</a></li>
+                <li><a href="#fixtures" class="drawer-link"><i data-lucide="package" style="width: 18px; height: 18px;"></i> 無料レンタル什器</a></li>
+                <li><a href="#pricing" class="drawer-link"><i data-lucide="tag" style="width: 18px; height: 18px;"></i> 出店プラン</a></li>
+                <li><a href="#flow" class="drawer-link"><i data-lucide="check-circle-2" style="width: 18px; height: 18px;"></i> 出店までの流れ</a></li>
+                <li><a href="#rules" class="drawer-link"><i data-lucide="help-circle" style="width: 18px; height: 18px;"></i> 規約・よくある質問</a></li>
+            </ul>
+            <div class="nav-drawer-footer">
+                <a href="index.html" class="btn btn-outline drawer-cta-btn"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> お客様向けサイトへ</a>
+                <a href="#contact" class="btn btn-primary drawer-cta-btn"><i data-lucide="send" style="width: 16px; height: 16px;"></i> 出店にエントリー</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="hero-bg" src="hero_bg.png" alt="COMADO marché botanical theme background">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-tag">2026年10月 グランドオープン！マルシェメンバー募集</span>
+                <h1 class="hero-title">
+                    <span class="hero-logo-span"><i data-lucide="leaf" class="logo-leaf"></i> COMADO marché OZASA</span>
+                    つくり手の想いと街の日常をつなぐ、<br>日替わりマルシェ
+                </h1>
+                <p class="hero-desc">
+                    「必要な什器は無料貸出・お好きなタイミングで出店可能」<br>
+                    COMADO marchéは、こだわりを形にするつくり手のための、柔軟でプレミアムな屋内マルシェです。
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">今すぐエントリー</a>
+                    <a href="#about" class="btn btn-outline">詳しく見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section reveal">
+        <div class="container concept-grid">
+            <div class="concept-image-wrap">
+                <img class="concept-image" src="concept_pic.png" alt="Warm indoor marketplace setup">
+            </div>
+            <div class="concept-content">
+                <span class="section-en-title">コンセプト</span>
+                <h3>街の日常に、あなたのこだわりを届ける場所。</h3>
+                <p>
+                    COMADO marché OZASA は、福岡市中央区小笹にある「PAL不動産」の一画を活かした、小さな日替わりマルシェです。
+                </p>
+                <p>
+                    単なるマルシェではなく、つくり手の皆さまが込めた「ストーリー」や「温かい想い」を地域のお客様に丁寧に届ける。そんな「街の小さな広場」を目指しています。
+                </p>
+                <p>
+                    「いつか自分のお店を持ちたい」「遠方だけど福岡で対面販売してみたい」—その第一歩を、PAL不動産が全力で応援します。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-bg-alt reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-en-title">出店のメリット</span>
+                <h2 class="section-jp-title">出店者が笑顔になる、3つの安心特徴</h2>
+            </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i data-lucide="package" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="feature-title">マルシェに必要な什器を無料貸出！</h3>
+                    <p class="feature-desc">
+                        ナチュラルな木製マルシェテーブルや木箱、編みかご、ガラスショーケース、真鍮アクセサリートレイ、テーブルクロス、照明に至るまで、ディスプレイに必要な什器はすべて無料で貸出します。重い什器を車で運ぶ手間が不要です。
+                    </p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i data-lucide="sun" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="feature-title">雨天も安心な屋内空間</h3>
+                    <p class="feature-desc">
+                        不動産店舗の明るく綺麗な屋内ギャラリースペースを利用するため、雨や風、夏の過酷な日差し、冬の厳しい寒さを一切気にする必要がありません。快適な環境で、お客様との対話や接客に100%集中できます。
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrap">
+                        <i data-lucide="handshake" style="width: 32px; height: 32px;"></i>
+                    </div>
+                    <h3 class="feature-title">手厚い集客・SNS支援</h3>
+                    <p class="feature-desc">
+                        マルシェ公式Instagramや、店頭のブラックボード、月間イベントカレンダー、地域コミュニティへの告知を通じて、出店者様とその作品の魅力を事務局がプロモーションします。初めての方でもファンがつきやすい環境です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixtures Showcase Section -->
+    <section id="fixtures" class="section reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-en-title">無料貸出什器</span>
+                <h2 class="section-jp-title">無料で使えるこだわりの什器・備品</h2>
+            </div>
+            
+            <div class="fixtures-tabs">
+                <button class="fixture-tab-btn active" data-category="all">すべて</button>
+                <button class="fixture-tab-btn" data-category="main">基本什器</button>
+                <button class="fixture-tab-btn" data-category="props">演出小物</button>
+                <button class="fixture-tab-btn" data-category="lighting">リネン・照明</button>
+            </div>
+
+            <div class="fixtures-grid">
+                <!-- Item 1 -->
+                <div class="fixture-item" data-category="main">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_table.png" alt="木製マルシェテーブル">
+                        <span class="fixture-tag">基本什器</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">ナチュラル木製マルシェテーブル</h4>
+                        <p class="fixture-desc">温かみのある無垢の杉材を使用したオリジナル組み立て式テーブル。メインの展示台として作品を美しく演出します。</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="fixture-item" data-category="main">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_boxes.png" alt="ひな壇ディスプレイ木箱">
+                        <span class="fixture-tag">基本什器</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">ひな壇ディスプレイ木箱</h4>
+                        <p class="fixture-desc">高さを出して立体的に配置するための段差木箱セット。焼き菓子やパン、小さな雑貨に動きを出せます。</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="fixture-item" data-category="props">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_baskets.png" alt="ナチュラル編みかご">
+                        <span class="fixture-tag">演出小物</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">ラタン・柳の編みかご各種</h4>
+                        <p class="fixture-desc">個包装のパンや洋菓子に最適な素朴で可愛いかご。複数のサイズ・深さのものを揃えています。</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="fixture-item" data-category="props">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_brass.png" alt="真鍮トレイ＆アクセサリートレイ">
+                        <span class="fixture-tag">演出小物</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">真鍮トレイ＆アクセサリートレイ</h4>
+                        <p class="fixture-desc">経年変化によるヴィンテージ感が美しい真鍮製の小皿やトレイ。ジュエリーや高価格帯の小物に最適です。</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="fixture-item" data-category="lighting">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_linen.png" alt="ベルギーリネンテーブルクロス">
+                        <span class="fixture-tag">リネン・照明</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">ベルギーリネン・テーブルクロス</h4>
+                        <p class="fixture-desc">ナチュラルな風合いの生成り色のリネン生地。テーブルに敷くだけで空間全体の質感が大幅にアップします。</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="fixture-item" data-category="lighting">
+                    <div class="fixture-image-wrap">
+                        <img class="fixture-image" src="fixture_light.png" alt="クリップ電球照明">
+                        <span class="fixture-tag">リネン・照明</span>
+                    </div>
+                    <div class="fixture-details">
+                        <h4 class="fixture-name">温白色クリップ式LED電球照明</h4>
+                        <p class="fixture-desc">テーブルを優しく照らし出す暖色の電球スポットライト。曇りの日や夕方でも作品をくっきり魅力的に見せます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & Calculator Section -->
+    <section id="pricing" class="section section-bg-alt reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-en-title">出店プラン</span>
+                <h2 class="section-jp-title">選べる2つのシンプルな出店プラン</h2>
+            </div>
+
+            <div class="pricing-wrapper">
+                <!-- Spot Plan -->
+                <div class="pricing-card">
+                    <h3 class="plan-name">スポット出店</h3>
+                    <p class="plan-sub">まずは1日だけ試したい、週末だけ販売したい方に</p>
+                    <div class="plan-price">20%<span>売上手数料</span></div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check-circle-2"></i> 最低保証料: 3,000円 / 日</li>
+                        <li><i data-lucide="check-circle-2"></i> 什器類すべて無料レンタル</li>
+                        <li><i data-lucide="check-circle-2"></i> 共同POSレジシステムの利用可能</li>
+                        <li><i data-lucide="check-circle-2"></i> 個別Instagram告知サポート</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-plan" data-select-plan="spot">スポットプランで申し込む</a>
+                </div>
+
+                <!-- Regular Plan -->
+                <div class="pricing-card">
+                    <h3 class="plan-name">定期出店</h3>
+                    <p class="plan-sub">月1回以上×6ヶ月〜出店し、街に固定ファンを作りたい方に</p>
+                    <div class="plan-price">15%<span>売上手数料</span></div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check-circle-2"></i> 最低保証料: 3,000円 / 日</li>
+                        <li><i data-lucide="check-circle-2"></i> 手数料率を5%優遇（15%）</li>
+                        <li><i data-lucide="check-circle-2"></i> 什器類すべて優先・無料レンタル</li>
+                        <li><i data-lucide="check-circle-2"></i> 共同POSレジシステムの利用可能</li>
+                        <li><i data-lucide="check-circle-2"></i> 店頭カレンダー掲載・積極集客</li>
+                        <li><i data-lucide="check-circle-2"></i> 優先スケジュール確保</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-plan" data-select-plan="regular">定期プランで申し込む</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exhibiting Flow Section -->
+    <section id="flow" class="section reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-en-title">出店までの流れ</span>
+                <h2 class="section-jp-title">お申込みから当日までの流れ</h2>
+            </div>
+            
+            <div class="flow-timeline">
+                <!-- Step 1 -->
+                <div class="flow-step">
+                    <span class="flow-number">01</span>
+                    <div class="flow-card">
+                        <h4 class="flow-title">エントリーお申込み</h4>
+                        <p class="flow-desc">本サイト下部のエントリーフォームまたは公式Instagram DMより、必要事項をご記入の上エントリーしてください。</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flow-step">
+                    <span class="flow-number">02</span>
+                    <div class="flow-card">
+                        <h4 class="flow-title">オンラインまたは対面でのヒアリング</h4>
+                        <p class="flow-desc">お申込内容を確認後、事務局よりご連絡いたします。簡単な作品紹介とご希望日程、プラン等についてお伺いします。</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flow-step">
+                    <span class="flow-number">03</span>
+                    <div class="flow-card">
+                        <h4 class="flow-title">出店日確定・PR用の素材提供</h4>
+                        <p class="flow-desc">出店日が確定しましたら、公式Instagram等での告知用として、作品の素敵な写真（数枚）と紹介テキストを共有いただきます。また、事務局が実際に来店してPR撮影をすることも可能です。お気軽にお申し付けください。</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="flow-step">
+                    <span class="flow-number">04</span>
+                    <div class="flow-card">
+                        <h4 class="flow-title">当日：いよいよ出店！</h4>
+                        <p class="flow-desc">スペースの使用方法や什器の紹介など事務局が丁寧にお伝えします。ディスプレイを完成させてマルシェオープンです！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules & FAQ Section -->
+    <section id="rules" class="section section-bg-alt reveal">
+        <div class="container">
+            <div class="section-title-wrap">
+                <span class="section-en-title">Rules & FAQ</span>
+                <h2 class="section-jp-title">出店ルールとよくある質問</h2>
+                <p style="max-width: 700px; margin: 1.5rem auto 0; color: var(--text-secondary); font-size: 0.95rem;">
+                    安心・安全に、気持ちよくマルシェを運営するために以下のルールを設けています。ご不明な点がございましたらお気軽にお問い合わせください。
+                </p>
+            </div>
+
+            <div class="rules-accordion" style="max-width: 800px; margin: 0 auto;">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Q. 食品を販売する際の条件はありますか？
+                        <i data-lucide="plus" class="accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            ご自身の工房等で「保健所の営業許可（菓子製造業・惣菜製造業等）」を取得済みの方に限ります。また、全ての商品はあらかじめ個包装され、食品表示法に基づく「一括表示シール（原材料名、消費期限、製造者名、アレルギー表示等）」が貼られている必要があります。マルシェの現地での調理やカット販売は行えません。
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Q. ハンドメイド作品であれば何でも販売できますか？
+                        <i data-lucide="plus" class="accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            ご自身で制作されたオリジナル作品に限ります。著作権を侵害するもの（市販のキャラクター生地・柄・ブランドロゴを使用した布小物など）や仕入れ品・転売品の販売は一切禁止とさせていただきます。
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Q. 共同レジ（POSシステム）とはどういう仕組みですか？
+                        <i data-lucide="plus" class="accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            COMADO marcheでは1台のiPad POSレジを店舗に設置し、日替わりで出店する全員が同じレジを共同で使用します。各店舗ごとに「出店者コード」が配布され、セキュリティも安全です。お会計時には自動で計算してくれるためお会計のミスがありません。現金のみの対応となりますので、キャッシュレス決済をご希望の方はご相談ください。
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Q. 出店キャンセル料は発生しますか？
+                        <i data-lucide="plus" class="accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            出店確定後のキャンセルについては、出店日の7日前までは無料、それ以降の直前キャンセルについては、最低保証料（3,000円）と同額のキャンセル料を申し受ける場合がございます。あらかじめ日程を十分ご確認の上お申し込みください。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section reveal">
+        <div class="container">
+            <div class="form-box">
+                <span class="section-en-title">エントリーフォーム</span>
+                <h2 class="form-title">出店エントリーフォーム</h2>
+                <p class="form-desc">マルシェ出店をご希望の方は、以下のフォームに必要事項を入力して送信してください。事務局にて内容を確認後、3営業日以内にご連絡差し上げます。</p>
+                
+                <form id="marche-entry-form">
+                    <div class="form-grid">
+                        <div class="calc-group">
+                            <label class="input-label" for="form-name">お名前（必須）</label>
+                            <input type="text" id="form-name" class="input-field" required placeholder="山田 太郎">
+                        </div>
+                        <div class="calc-group">
+                            <label class="input-label" for="form-email">メールアドレス（必須）</label>
+                            <input type="email" id="form-email" class="input-field" required placeholder="example@email.com">
+                        </div>
+                        <div class="calc-group">
+                            <label class="input-label" for="form-shop">ブランド・ショップ名（必須）</label>
+                            <input type="text" id="form-shop" class="input-field" required placeholder="COMADO Bakery">
+                        </div>
+                        <div class="calc-group">
+                            <label class="input-label" for="form-category">出店ジャンル（必須）</label>
+                            <select id="form-category" class="input-field" required>
+                                <option value="" disabled selected>選択してください</option>
+                                <option value="baked">焼き菓子・パン・スイーツ</option>
+                                <option value="handmade">ハンドメイド雑貨・アクセサリー</option>
+                                <option value="botanical">生花・アロマ・ボタニカル</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="calc-group form-group-full">
+                            <label class="input-label">希望プラン（必須）</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="form-plan" value="spot" checked> スポット出店プラン (20%)
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="form-plan" value="regular"> 定期出店プラン (15%)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="calc-group form-group-full">
+                            <label class="input-label" for="form-intro">作品や取扱商品の紹介（必須）</label>
+                            <textarea id="form-intro" class="input-field" required placeholder="天然酵母を使用したハード系のパンや、季節のフルーツを使った焼き菓子を製造・販売しています。"></textarea>
+                        </div>
+                        <div class="calc-group form-group-full">
+                            <label class="input-label" for="form-url">ホームページ / Instagram URL</label>
+                            <input type="url" id="form-url" class="input-field" placeholder="https://instagram.com/your_account">
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit-wrap">
+                        <button type="submit" class="btn btn-primary">
+                            <i data-lucide="send"></i> この内容でエントリーする
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="footer-info-brand">
+                    <i data-lucide="leaf" class="logo-leaf"></i>
+                    COMADO marché
+                </div>
+                <p class="footer-info-desc">
+                    つくり手の想いと街の日常をつなぐ、日替わりマルシェ<br>
+                    福岡市中央区小笹から新しい出会いをお届けします。
+                </p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/comado_marche_ozasa" target="_blank" class="footer-social-link">
+                        <i data-lucide="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="footer-heading">メニュー</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">お客様向けサイト</a></li>
+                    <li><a href="#about">コンセプト</a></li>
+                    <li><a href="#features">3つの特徴</a></li>
+                    <li><a href="#fixtures">無料レンタル什器</a></li>
+                    <li><a href="#pricing">料金プラン</a></li>
+                    <li><a href="#flow">出店までの流れ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">運営・お問い合わせ</h4>
+                <ul class="footer-links">
+                    <li><a href="#">COMADO marché OZASA 運営事務局</a></li>
+                    <li><a href="#">福岡市中央区小笹（PAL不動産内）</a></li>
+                    <li><a href="#contact">出店エントリーはこちら</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 COMADO marché. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JS Core Logic link -->
+    <script src="app.js"></script>
+</body>
+</html>
