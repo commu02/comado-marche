@@ -1673,12 +1673,16 @@ textarea.input-field {
     .calendar-grid-wrapper {
         overflow-x: auto;
         padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
     }
     .calendar-grid {
         min-width: 700px; /* Force scrollable calendar grid on small screens */
     }
     .calendar-container {
         padding: 1.5rem 1rem;
+        display: inline-block;
+        min-width: 700px; /* Ensure white background box stretches to full scrolled width */
+        box-sizing: border-box;
     }
 }
 
