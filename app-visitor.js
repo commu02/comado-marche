@@ -57,72 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Monthly Calendar Cell Click -> Shop Detail Modal
     const calendarCells = document.querySelectorAll('.calendar-cell:not(.empty)');
 
-    // Dictionary of shop details for quick lookup
-    const shopDetails = {
-        'COMADOベーカリー': {
-            cat: 'ブレッド＆スイーツ',
-            vendor: '山本 恵美',
-            img: 'fixture_boxes.png',
-            desc: '国産小麦と天然酵母にこだわったハード系パンと、しっとり食感の特製シナモンロールをお届けします。毎日の朝食やおやつに。'
-        },
-        'ラ・フルール': {
-            cat: 'ボタニカル・生花',
-            vendor: '佐藤 結衣',
-            img: 'fixture_baskets.png',
-            desc: '季節の小花を集めた素朴で可愛いミニブーケと、ドライフラワーのスワッグ。お部屋に小さな秋を飾りませんか？'
-        },
-        'アロマフォレスト': {
-            cat: 'アロマ雑貨',
-            vendor: '田中 玲奈',
-            img: 'fixture_light.png',
-            desc: '100%大豆ワックスを使用した、体に優しいソイキャンドルとブレンドエッセンシャルオイル。優しい灯りと香りに癒やされて。'
-        },
-        'スタジオブラス': {
-            cat: 'アクセサリー',
-            vendor: '伊藤 健太',
-            img: 'fixture_brass.png',
-            desc: '使えば使うほど味わいが増す無垢の真鍮アクセサリー。職人がひとつひとつ手作業で削り出しています。'
-        },
-        'リネンライフ': {
-            cat: '布小物・リネン',
-            vendor: '渡辺 奈々',
-            img: 'fixture_linen.png',
-            desc: '洗うほどに柔らかくなる上質なリネン100%のキッチンクロスとエプロン。暮らしに寄り添うナチュラル雑貨です。'
-        },
-        '自然派焼き菓子': {
-            cat: '焼き菓子・スイーツ',
-            vendor: '木村 美香',
-            img: 'concept_pic.png',
-            desc: '体に優しいオーガニック素材と国産バターをふんだんに使用した手作りサブレと焼き菓子セット。ギフトにも喜ばれます。'
-        },
-        '小笹カフェ': {
-            cat: 'スイーツ＆コーヒー',
-            vendor: '木村 さくら',
-            img: 'visitor_concept.png',
-            desc: '地元の食材を使った手作りスコーンと、相性抜群のカフェオレを提供します。お買い物の合間の素敵な休憩タイムに。'
-        },
-        '森の木工房': {
-            cat: 'ウッドクラフト',
-            vendor: '佐々木 茂',
-            img: 'fixture_table.png',
-            desc: '美しい木目の一枚板から切り出した、特製カッティングボード。おもてなしの食卓に木の温もりと彩りを添えます。'
-        }
-    };
-
     calendarCells.forEach(cell => {
         cell.style.cursor = 'pointer';
         
         cell.addEventListener('click', () => {
             const dayNum = cell.querySelector('.day-num') ? cell.querySelector('.day-num').textContent : '';
-            const shopNameElem = cell.querySelector('.cell-shop');
-            if (!shopNameElem) return;
 
-            const shopName = shopNameElem.textContent.trim();
-            const details = shopDetails[shopName] || {
-                cat: 'ハンドメイド',
-                vendor: 'マルシェ出店者',
+            const shopName = 'Coming Soon';
+            const details = {
+                cat: '出店店舗 順次発表',
+                vendor: '出店者様 募集中',
                 img: 'visitor_concept.png',
-                desc: 'つくり手の想いが詰まったこだわりの作品をお届けします。ぜひ店頭で手に取ってご覧ください。'
+                desc: '10月の出店店舗は決定次第、公式Instagram（@comado.marche）および当サイトにて順次発表いたします！現在、出店メンバーを募集中です。出店をご希望の方は「出店希望の方」ボタンよりお気軽にお申し込みください。'
             };
 
             // Open Detail Modal
@@ -152,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="position: relative; height: 200px; overflow: hidden;">
                     <img src="${details.img}" alt="${shopName}" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; top: 1rem; left: 1rem; background-color: var(--accent-sage, #5b7053); color: #fff; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600;">
-                        10月${dayNum}日（出店）
+                        10月${dayNum}日（予定）
                     </div>
                 </div>
                 <div style="padding: 2rem;">
@@ -163,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
                     <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); margin-bottom: 1.5rem;">
                         <div style="width: 36px; height: 36px; background-color: #5b7053; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">
-                            ${details.vendor.charAt(0)}
+                            ？
                         </div>
                         <div>
                             <span style="font-size: 0.75rem; color: #888; display: block;">出店者</span>
