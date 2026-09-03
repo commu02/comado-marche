@@ -54,22 +54,93 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Monthly Calendar Cell Click -> Shop Detail Modal
+    // 4. Google Sheets Schedule Fetch & Live Auto-Sync
+    const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycby3CjMnZP4uynYV75ogWB3LwZB1jh-QX3vUcKYjVnWCCI3tWzPqc5V1Jf2DKjQoJ6od2w/exec';
+    
+    window.liveScheduleData = {};
+
+    async function fetchLiveSchedule() {
+        try {
+            const response = await fetch(`${GAS_WEB_APP_URL}?action=getSchedule`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data && data.schedule) {
+                    applyScheduleData(data.schedule);
+                }
+            }
+        } catch (err) {
+            console.log('Google Sheets Sync: Using static template / Coming Soon fallback');
+        }
+    }
+
+    function applyScheduleData(scheduleList) {
+        scheduleList.forEach(item => {
+            let dayNum = item.day;
+            if (!dayNum) return;
+
+            // Extract day number (e.g. 1, 15) from Date strings or numbers
+            const parsedDate = new Date(dayNum);
+            if (!isNaN(parsedDate.getDate())) {
+                dayNum = String(parsedDate.getDate());
+            } else {
+                const match = String(dayNum).match(/\d+/);
+                if (match) dayNum = match[0];
+            }
+
+            window.liveScheduleData[dayNum] = item;
+
+            // 1. Update Calendar Cell
+            const cell = document.querySelector(`.calendar-cell[data-day="${dayNum}"]`);
+            if (cell && item.shop && item.shop !== 'Coming Soon') {
+                const shopSpan = cell.querySelector('.cell-shop');
+                if (shopSpan) shopSpan.textContent = item.shop;
+                const thumbImg = cell.querySelector('.cell-thumb');
+                if (thumbImg && item.img) thumbImg.src = item.img;
+            }
+
+            // 2. Update Weekly Schedule Items
+            const card = document.querySelector(`.sched-item[data-day="${dayNum}"]`);
+            if (card && item.shop && item.shop !== 'Coming Soon') {
+                const titleElem = card.querySelector('.sched-title');
+                if (titleElem) titleElem.textContent = item.shop;
+                const timeElem = card.querySelector('.sched-time');
+                if (timeElem && item.cat) timeElem.textContent = item.cat;
+                const descElem = card.querySelector('.sched-desc');
+                if (descElem && item.desc) descElem.textContent = item.desc;
+                const imgElem = card.querySelector('.sched-img');
+                if (imgElem && item.img) imgElem.src = item.img;
+            }
+        });
+    }
+
+    fetchLiveSchedule();
+
+    // 5. Monthly Calendar Cell Click -> Shop Detail Modal
     const calendarCells = document.querySelectorAll('.calendar-cell:not(.empty)');
 
     calendarCells.forEach(cell => {
         cell.style.cursor = 'pointer';
         
         cell.addEventListener('click', () => {
-            const dayNum = cell.querySelector('.day-num') ? cell.querySelector('.day-num').textContent : '';
+            const dayNum = cell.querySelector('.day-num') ? cell.querySelector('.day-num').textContent.trim() : '';
 
-            const shopName = 'Coming Soon';
-            const details = {
+            const liveData = window.liveScheduleData[dayNum];
+            
+            let shopName = 'Coming Soon';
+            let details = {
                 cat: '出店店舗 順次発表',
-                vendor: '出店者様 募集中',
                 img: 'visitor_concept.png',
                 desc: '10月の出店店舗は決定次第、公式Instagram（@comado.marche）および当サイトにて順次発表いたします！現在、出店メンバーを募集中です。出店をご希望の方は「出店希望の方」ボタンよりお気軽にお申し込みください。'
             };
+
+            if (liveData && liveData.shop && liveData.shop !== 'Coming Soon') {
+                shopName = liveData.shop;
+                details = {
+                    cat: liveData.cat || 'おすすめ店舗',
+                    img: liveData.img || 'visitor_concept.png',
+                    desc: liveData.desc || 'つくり手の想いが詰まったこだわりの商品をお届けします。ぜひ店頭でご覧ください。'
+                };
+            }
 
             // Open Detail Modal
             showShopModal(dayNum, shopName, details);
@@ -98,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="position: relative; height: 200px; overflow: hidden;">
                     <img src="${details.img}" alt="${shopName}" style="width: 100%; height: 100%; object-fit: cover;">
                     <div style="position: absolute; top: 1rem; left: 1rem; background-color: var(--accent-sage, #5b7053); color: #fff; padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600;">
-                        10月${dayNum}日（予定）
+                        10月${dayNum}日（出店）
                     </div>
                 </div>
                 <div style="padding: 2rem;">
@@ -107,15 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p style="color: #666; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
                         ${details.desc}
                     </p>
-                    <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); margin-bottom: 1.5rem;">
-                        <div style="width: 36px; height: 36px; background-color: #5b7053; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">
-                            ？
-                        </div>
-                        <div>
-                            <span style="font-size: 0.75rem; color: #888; display: block;">出店者</span>
-                            <span style="font-weight: 600; color: #333; font-size: 0.9rem;">${details.vendor}</span>
-                        </div>
-                    </div>
                     <button id="modal-close-btn" style="width: 100%; background-color: #5b7053; color: #fcfbf7; border: none; padding: 0.85rem 0; border-radius: 9999px; font-weight: 600; cursor: pointer; font-size: 0.95rem; box-shadow: 0 4px 12px rgba(91, 112, 83, 0.25);">
                         閉じる
                     </button>
